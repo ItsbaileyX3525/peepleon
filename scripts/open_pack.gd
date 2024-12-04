@@ -44,6 +44,13 @@ var cards = [
 	{"name": "Card T", "chance": .001},
 	
 ]
+
+var cards_to_show: Array = [
+	$"../Open Pack/Cards/Card",$"../Open Pack/Cards/Card2",$"../Open Pack/Cards/Card3",$"../Open Pack/Cards/Card4",
+	$"../Open Pack/Cards/Card6",$"../Open Pack/Cards/Card5",$"../Open Pack/Cards/Card7",$"../Open Pack/Cards/Card8",
+	$"../Open Pack/Cards/Card9",$"../Open Pack/Cards/Card10",$"../Open Pack/Cards/Card11",$"../Open Pack/Cards/Card12",
+]
+
 @onready var silly_label: Label = $"../Open Pack/Silly label"
 
 var step_timer: float = 0
