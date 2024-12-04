@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://dirhq3ji5it4y"]
+
+[ext_resource type="Texture2D" uid="uid://bbyrqvofnpa1v" path="res://assets/peepleon/Nya-man.png" id="1_4u5yv"]
+[ext_resource type="Texture2D" uid="uid://c03ditfl7amy2" path="res://assets/packs/basic pack.png" id="1_b7nwo"]
+[ext_resource type="Script" path="res://scripts/open_pack.gd" id="2_sm3fx"]
+[ext_resource type="Script" path="res://scripts/music_handler.gd" id="3_phqlm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgjdb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Node2D"]
+
+[node name="Open Pack" type="Node2D" parent="."]
+position = Vector2(-6.10352e-05, 0)
+
+[node name="PackIconSwipe" type="Button" parent="Open Pack"]
+offset_left = 467.0
+offset_top = 47.0
+offset_right = 814.0
+offset_bottom = 555.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_jgjdb")
+flat = true
+
+[node name="Silly label" type="Label" parent="Open Pack"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 850.0
+offset_top = 266.0
+offset_right = 1705.0
+offset_bottom = 579.0
+scale = Vector2(0.437621, 0.437621)
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_font_sizes/font_size = 100
+text = " (Swipe right to open pack --->) "
+autowrap_mode = 2
+
+[node name="Cards" type="Node2D" parent="Open Pack"]
+visible = false
+
+[node name="Card" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+position = Vector2(641, 301)
+scale = Vector2(0.516065, 0.516065)
+texture = ExtResource("1_4u5yv")
+
+[node name="Card2" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card3" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card4" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card5" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card6" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card7" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card8" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card9" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card10" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card11" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="Card12" type="Sprite2D" parent="Open Pack/Cards"]
+visible = false
+
+[node name="PackIcon" type="Sprite2D" parent="."]
+position = Vector2(640, 301)
+scale = Vector2(0.352, 0.352)
+texture = ExtResource("1_b7nwo")
+
+[node name="Open" type="Button" parent="."]
+offset_left = 495.0
+offset_top = 534.0
+offset_right = 992.0
+offset_bottom = 631.0
+scale = Vector2(0.595997, 0.595997)
+theme_override_font_sizes/font_size = 100
+text = "Open pack"
+script = ExtResource("2_sm3fx")
+
+[node name="Previous" type="Button" parent="."]
+offset_left = 454.0
+offset_top = 269.0
+offset_right = 547.0
+offset_bottom = 366.0
+scale = Vector2(0.595997, 0.595997)
+theme_override_font_sizes/font_size = 100
+text = "<"
+
+[node name="Next" type="Button" parent="."]
+offset_left = 770.0
+offset_top = 269.0
+offset_right = 863.0
+offset_bottom = 366.0
+scale = Vector2(0.595997, 0.595997)
+theme_override_font_sizes/font_size = 100
+text = ">"
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+
+[node name="MusicHandler" type="Node2D" parent="."]
+script = ExtResource("3_phqlm")
+
+[connection signal="button_down" from="Open Pack/PackIconSwipe" to="Open" method="_on_pack_icon_swipe_button_down"]
+[connection signal="button_up" from="Open Pack/PackIconSwipe" to="Open" method="_on_pack_icon_swipe_button_up"]
+[connection signal="button_up" from="Open" to="Open" method="_on_button_up"]
+[connection signal="finished" from="Background" to="MusicHandler" method="_on_background_finished"]
