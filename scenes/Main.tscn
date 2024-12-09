@@ -1,0 +1,267 @@
+[gd_scene load_steps=8 format=3 uid="uid://dirhq3ji5it4y"]
+
+[ext_resource type="Texture2D" uid="uid://bbyrqvofnpa1v" path="res://assets/peepleon/Nya-man.png" id="1_4u5yv"]
+[ext_resource type="Texture2D" uid="uid://c03ditfl7amy2" path="res://assets/packs/basic pack.png" id="1_b7nwo"]
+[ext_resource type="StyleBox" uid="uid://o0v3mibvdbpf" path="res://styles/remove_outline_button.tres" id="1_m28x3"]
+[ext_resource type="Script" path="res://scripts/open_pack.gd" id="2_sm3fx"]
+[ext_resource type="Script" path="res://scripts/music_handler.gd" id="3_phqlm"]
+[ext_resource type="Texture2D" uid="uid://qjfrhj6kidtt" path="res://assets/main/coin.png" id="5_jg8w2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgjdb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Node2D"]
+
+[node name="Open Pack" type="Node2D" parent="."]
+position = Vector2(-6.10352e-05, 0)
+
+[node name="Cards" type="Node2D" parent="Open Pack"]
+position = Vector2(6.10352e-05, 0)
+
+[node name="Card12" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card11" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card10" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card9" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card8" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card7" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card6" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card5" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card4" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card3" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card2" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="Card" type="Button" parent="Open Pack/Cards"]
+visible = false
+offset_left = 495.0
+offset_top = 47.0
+offset_right = 1055.0
+offset_bottom = 1033.0
+scale = Vector2(0.516065, 0.516065)
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("1_m28x3")
+icon = ExtResource("1_4u5yv")
+
+[node name="PackIconSwipe" type="Button" parent="Open Pack"]
+offset_left = 467.0
+offset_top = 47.0
+offset_right = 814.0
+offset_bottom = 555.0
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxFlat_jgjdb")
+flat = true
+
+[node name="Silly label" type="Label" parent="Open Pack"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 850.0
+offset_top = 266.0
+offset_right = 1705.0
+offset_bottom = 579.0
+scale = Vector2(0.437621, 0.437621)
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_font_sizes/font_size = 100
+text = " (Swipe right to open pack --->) "
+autowrap_mode = 2
+
+[node name="PackIcon" type="Sprite2D" parent="."]
+position = Vector2(640, 301)
+scale = Vector2(0.352, 0.352)
+texture = ExtResource("1_b7nwo")
+
+[node name="Open" type="Button" parent="."]
+offset_left = 495.0
+offset_top = 534.0
+offset_right = 992.0
+offset_bottom = 631.0
+scale = Vector2(0.595997, 0.595997)
+theme_override_font_sizes/font_size = 100
+text = "Open pack"
+script = ExtResource("2_sm3fx")
+
+[node name="price" type="Node2D" parent="."]
+position = Vector2(-583, 463)
+
+[node name="Coin" type="Sprite2D" parent="price"]
+position = Vector2(1141, 20)
+scale = Vector2(0.149864, 0.149864)
+texture = ExtResource("5_jg8w2")
+
+[node name="Counter" type="Label" parent="price"]
+offset_left = 1184.0
+offset_top = 4.0
+offset_right = 1605.0
+offset_bottom = 93.0
+scale = Vector2(0.439692, 0.439692)
+theme_override_font_sizes/font_size = 100
+text = "100"
+
+[node name="Previous" type="Button" parent="."]
+offset_left = 454.0
+offset_top = 269.0
+offset_right = 547.0
+offset_bottom = 366.0
+scale = Vector2(0.595997, 0.595997)
+theme_override_font_sizes/font_size = 100
+text = "<"
+
+[node name="Next" type="Button" parent="."]
+offset_left = 770.0
+offset_top = 269.0
+offset_right = 863.0
+offset_bottom = 366.0
+scale = Vector2(0.595997, 0.595997)
+theme_override_font_sizes/font_size = 100
+text = ">"
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+
+[node name="MusicHandler" type="Node2D" parent="."]
+script = ExtResource("3_phqlm")
+
+[node name="OtherUI" type="Node2D" parent="."]
+
+[node name="Coins" type="Node2D" parent="OtherUI"]
+
+[node name="Coin" type="Sprite2D" parent="OtherUI/Coins"]
+position = Vector2(1141, 20)
+scale = Vector2(0.128509, 0.128509)
+texture = ExtResource("5_jg8w2")
+
+[node name="Counter" type="Label" parent="OtherUI/Coins"]
+offset_left = 1171.0
+offset_top = 6.0
+offset_right = 1455.0
+offset_bottom = 95.0
+scale = Vector2(0.32746, 0.32746)
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="Broke" type="Node2D" parent="OtherUI"]
+
+[node name="BrokeLabel" type="Label" parent="OtherUI/Broke"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 41.0
+offset_top = 163.0
+offset_right = 1186.0
+offset_bottom = 344.0
+scale = Vector2(0.32746, 0.32746)
+theme_override_font_sizes/font_size = 100
+text = "Sorry you don't have enough money! "
+autowrap_mode = 3
+
+[node name="Save" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="button_down" from="Open Pack/PackIconSwipe" to="Open" method="_on_pack_icon_swipe_button_down"]
+[connection signal="button_up" from="Open Pack/PackIconSwipe" to="Open" method="_on_pack_icon_swipe_button_up"]
+[connection signal="button_up" from="Open" to="Open" method="_on_button_up"]
+[connection signal="finished" from="Background" to="MusicHandler" method="_on_background_finished"]
+[connection signal="timeout" from="Save" to="Open" method="_on_save_timeout"]

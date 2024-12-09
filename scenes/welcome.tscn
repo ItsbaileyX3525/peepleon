@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://d01o3rltmcr05"]
+
+[ext_resource type="Script" path="res://scripts/welcome.gd" id="1_2qg3a"]
+
+[node name="Welcome" type="Node2D"]
+script = ExtResource("1_2qg3a")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 16.0
+scale = Vector2(0.784381, 0.784381)
+theme_override_font_sizes/font_size = 136
+text = "Welcome to the tutorial"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 217.0
+offset_top = 376.0
+offset_right = 1592.0
+offset_bottom = 492.0
+scale = Vector2(0.615333, 0.615333)
+theme_override_font_sizes/font_size = 121
+text = "Click here to complete"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
