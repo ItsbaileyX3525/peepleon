@@ -1,16 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://dirhq3ji5it4y"]
+[gd_scene load_steps=17 format=3 uid="uid://dirhq3ji5it4y"]
 
 [ext_resource type="Texture2D" uid="uid://bbyrqvofnpa1v" path="res://assets/peepleon/Nya-man.png" id="1_4u5yv"]
 [ext_resource type="Texture2D" uid="uid://c03ditfl7amy2" path="res://assets/packs/basic pack.png" id="1_b7nwo"]
 [ext_resource type="StyleBox" uid="uid://o0v3mibvdbpf" path="res://styles/remove_outline_button.tres" id="1_m28x3"]
 [ext_resource type="Script" path="res://scripts/open_pack.gd" id="2_sm3fx"]
+[ext_resource type="AudioStream" uid="uid://iuj1xit20jut" path="res://assets/UI/audio/pack_open.wav" id="3_27w5j"]
+[ext_resource type="Texture2D" uid="uid://cluka22vv88s4" path="res://assets/UI/star.png" id="3_g7m8p"]
 [ext_resource type="Script" path="res://scripts/music_handler.gd" id="3_phqlm"]
+[ext_resource type="AudioStream" uid="uid://taryq4oqy32h" path="res://assets/UI/audio/card_swipe.wav" id="4_luy8t"]
 [ext_resource type="Texture2D" uid="uid://qjfrhj6kidtt" path="res://assets/main/coin.png" id="5_jg8w2"]
+[ext_resource type="StyleBox" uid="uid://f0wrdj8qqpvk" path="res://styles/present default.tres" id="7_ewabu"]
+[ext_resource type="Texture2D" uid="uid://qwm7fhf6tlj1" path="res://assets/UI/present.png" id="7_wcjo0"]
+[ext_resource type="StyleBox" uid="uid://duc41d6q4po7y" path="res://styles/return button.tres" id="9_5vmvv"]
+[ext_resource type="Texture2D" uid="uid://b0c0nij26nj1d" path="res://assets/UI/Return.png" id="9_qismg"]
+[ext_resource type="AudioStream" uid="uid://qjw2k7cwb55j" path="res://assets/UI/audio/Modern7.wav" id="9_qk0mn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgjdb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="Control" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj5hm"]
+bg_color = Color(0.848843, 0.732302, 0.661682, 0.631373)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+
+[node name="main" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1303.0
+offset_bottom = 748.0
+color = Color(0.940386, 0.923797, 0.843646, 1)
 
 [node name="Open Pack" type="Node2D" parent="."]
 position = Vector2(-6.10352e-05, 0)
@@ -158,6 +182,50 @@ mouse_filter = 1
 theme_override_styles/focus = SubResource("StyleBoxFlat_jgjdb")
 flat = true
 
+[node name="sparkles1" type="CPUParticles2D" parent="Open Pack"]
+position = Vector2(630, 175)
+emitting = false
+amount = 14
+explosiveness = 0.31
+randomness = 0.06
+texture = ExtResource("3_g7m8p")
+emission_shape = 1
+emission_sphere_radius = 78.76
+spread = 119.05
+gravity = Vector2(0, -980)
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+
+[node name="sparkles2" type="CPUParticles2D" parent="Open Pack"]
+position = Vector2(732, 355)
+rotation = -1.82905
+emitting = false
+amount = 14
+explosiveness = 0.31
+randomness = 0.06
+texture = ExtResource("3_g7m8p")
+emission_shape = 1
+emission_sphere_radius = 78.76
+spread = 119.05
+gravity = Vector2(500, -980)
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+
+[node name="sparkles3" type="CPUParticles2D" parent="Open Pack"]
+position = Vector2(528, 348)
+rotation = -1.82905
+emitting = false
+amount = 14
+explosiveness = 0.31
+randomness = 0.06
+texture = ExtResource("3_g7m8p")
+emission_shape = 1
+emission_sphere_radius = 78.76
+spread = 119.05
+gravity = Vector2(-500, -980)
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+
 [node name="Silly label" type="Label" parent="Open Pack"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 850.0
@@ -165,10 +233,17 @@ offset_top = 266.0
 offset_right = 1705.0
 offset_bottom = 579.0
 scale = Vector2(0.437621, 0.437621)
-theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = " (Swipe right to open pack --->) "
 autowrap_mode = 2
+
+[node name="packCrumble" type="AudioStreamPlayer" parent="Open Pack"]
+stream = ExtResource("3_27w5j")
+
+[node name="cardSlide" type="AudioStreamPlayer" parent="Open Pack"]
+stream = ExtResource("4_luy8t")
+volume_db = 12.18
 
 [node name="PackIcon" type="Sprite2D" parent="."]
 position = Vector2(640, 301)
@@ -181,6 +256,10 @@ offset_top = 534.0
 offset_right = 992.0
 offset_bottom = 631.0
 scale = Vector2(0.595997, 0.595997)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Open pack"
 script = ExtResource("2_sm3fx")
@@ -199,6 +278,7 @@ offset_top = 4.0
 offset_right = 1605.0
 offset_bottom = 93.0
 scale = Vector2(0.439692, 0.439692)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "100"
 
@@ -208,8 +288,27 @@ offset_top = 269.0
 offset_right = 547.0
 offset_bottom = 366.0
 scale = Vector2(0.595997, 0.595997)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "<"
+
+[node name="MoneyCheat" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 644.0
+offset_right = 532.0
+offset_bottom = 741.0
+scale = Vector2(0.595997, 0.595997)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Add money"
 
 [node name="Next" type="Button" parent="."]
 offset_left = 770.0
@@ -217,10 +316,16 @@ offset_top = 269.0
 offset_right = 863.0
 offset_bottom = 366.0
 scale = Vector2(0.595997, 0.595997)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = ">"
 
 [node name="Background" type="AudioStreamPlayer" parent="."]
+volume_db = -5.622
 
 [node name="MusicHandler" type="Node2D" parent="."]
 script = ExtResource("3_phqlm")
@@ -228,18 +333,21 @@ script = ExtResource("3_phqlm")
 [node name="OtherUI" type="Node2D" parent="."]
 
 [node name="Coins" type="Node2D" parent="OtherUI"]
+position = Vector2(603, 0)
+scale = Vector2(1.91035, 1.91035)
 
 [node name="Coin" type="Sprite2D" parent="OtherUI/Coins"]
-position = Vector2(1141, 20)
+position = Vector2(-43.8601, 20)
 scale = Vector2(0.128509, 0.128509)
 texture = ExtResource("5_jg8w2")
 
 [node name="Counter" type="Label" parent="OtherUI/Coins"]
-offset_left = 1171.0
+offset_left = -13.8602
 offset_top = 6.0
-offset_right = 1455.0
+offset_right = 270.14
 offset_bottom = 95.0
 scale = Vector2(0.32746, 0.32746)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "0"
 
@@ -256,12 +364,83 @@ theme_override_font_sizes/font_size = 100
 text = "Sorry you don't have enough money! "
 autowrap_mode = 3
 
+[node name="Misc" type="HBoxContainer" parent="OtherUI"]
+offset_left = 1049.0
+offset_top = 2.0
+offset_right = 1386.0
+offset_bottom = 325.0
+scale = Vector2(0.159334, 0.159334)
+
+[node name="GiftButton" type="Button" parent="OtherUI/Misc"]
+layout_mode = 2
+theme_override_styles/focus = ExtResource("7_ewabu")
+theme_override_styles/hover_pressed = ExtResource("7_ewabu")
+theme_override_styles/hover = ExtResource("7_ewabu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tj5hm")
+theme_override_styles/normal = ExtResource("7_ewabu")
+icon = ExtResource("7_wcjo0")
+
 [node name="Save" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
+[node name="Gifts" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Gifts"]
+layout_mode = 0
+offset_right = 1303.0
+offset_bottom = 748.0
+color = Color(0.940386, 0.923797, 0.843646, 1)
+
+[node name="BrokeAssNoPresents" type="Label" parent="Gifts"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 278.0
+offset_right = 1128.0
+offset_bottom = 459.0
+scale = Vector2(1.21704, 1.21704)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "NO PRESENTS HERE AT THE TIME ;("
+autowrap_mode = 3
+
+[node name="GiftReturn" type="Button" parent="Gifts"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 589.0
+offset_bottom = 477.0
+scale = Vector2(0.129703, 0.129703)
+theme_override_styles/focus = ExtResource("9_5vmvv")
+theme_override_styles/hover_pressed = ExtResource("9_5vmvv")
+theme_override_styles/hover = ExtResource("9_5vmvv")
+theme_override_styles/pressed = ExtResource("9_5vmvv")
+theme_override_styles/normal = ExtResource("9_5vmvv")
+icon = ExtResource("9_qismg")
+
+[node name="Transition" type="ColorRect" parent="."]
+offset_right = 1290.0
+offset_bottom = 731.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qk0mn")
+volume_db = 3.748
+
 [connection signal="button_down" from="Open Pack/PackIconSwipe" to="Open" method="_on_pack_icon_swipe_button_down"]
 [connection signal="button_up" from="Open Pack/PackIconSwipe" to="Open" method="_on_pack_icon_swipe_button_up"]
 [connection signal="button_up" from="Open" to="Open" method="_on_button_up"]
+[connection signal="button_up" from="Previous" to="Open" method="_on_previous_button_up"]
+[connection signal="button_up" from="MoneyCheat" to="Open" method="_on_money_cheat_button_up"]
+[connection signal="button_up" from="Next" to="Open" method="_on_next_button_up"]
 [connection signal="finished" from="Background" to="MusicHandler" method="_on_background_finished"]
+[connection signal="button_up" from="OtherUI/Misc/GiftButton" to="Open" method="_on_gift_button_button_up"]
 [connection signal="timeout" from="Save" to="Open" method="_on_save_timeout"]
+[connection signal="button_up" from="Gifts/GiftReturn" to="Open" method="_on_gift_return_button_up"]

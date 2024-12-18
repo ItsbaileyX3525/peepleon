@@ -1,0 +1,186 @@
+[gd_scene load_steps=16 format=3 uid="uid://bfy2b2wuvom1u"]
+
+[ext_resource type="Script" path="res://scripts/card_deck.gd" id="1_q3tbn"]
+[ext_resource type="AudioStream" uid="uid://qjw2k7cwb55j" path="res://assets/UI/audio/Modern7.wav" id="2_0st5a"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="2_1gs5b"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="3_cch8n"]
+[ext_resource type="Texture2D" uid="uid://bbyrqvofnpa1v" path="res://assets/peepleon/Nya-man.png" id="4_t5020"]
+[ext_resource type="Texture2D" uid="uid://b7wbw54cq0h51" path="res://assets/peepleon/Cave-Thing.png" id="5_aj7xs"]
+[ext_resource type="Texture2D" uid="uid://bvf6omvlh5l6i" path="res://assets/peepleon/Kutti-gal.png" id="6_wxgl5"]
+[ext_resource type="Texture2D" uid="uid://ociei1idbvun" path="res://assets/peepleon/Nein-Nein man.png" id="7_all3s"]
+[ext_resource type="Texture2D" uid="uid://cpo41qru2sqxl" path="res://assets/peepleon/Urinsa-dev.png" id="8_fyf40"]
+[ext_resource type="Texture2D" uid="uid://0hn0rjogknr7" path="res://assets/peepleon/UWU-femboy.png" id="9_m46pc"]
+[ext_resource type="StyleBox" uid="uid://o0v3mibvdbpf" path="res://styles/remove_outline_button.tres" id="11_31ghj"]
+[ext_resource type="StyleBox" uid="uid://fmfhf0frbvd4" path="res://styles/button_return_card_deck.tres" id="13_42ndh"]
+
+[sub_resource type="Resource" id="Resource_odyae"]
+script = ExtResource("3_cch8n")
+friction = 4.0
+minimum_velocity = 0.4
+rebound_strength = 7.0
+
+[sub_resource type="Resource" id="Resource_5eekw"]
+script = ExtResource("3_cch8n")
+friction = 4.0
+minimum_velocity = 0.4
+rebound_strength = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnwel"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 15.0
+expand_margin_top = 4.0
+expand_margin_right = 15.0
+
+[node name="Card_deck" type="Node2D"]
+script = ExtResource("1_q3tbn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1303.0
+offset_bottom = 748.0
+color = Color(0.940386, 0.923797, 0.843646, 1)
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1gs5b")
+wheel_scroll_damper = SubResource("Resource_odyae")
+dragging_scroll_damper = SubResource("Resource_5eekw")
+
+[node name="Card_deck" type="HBoxContainer" parent="SmoothScrollContainer"]
+layout_mode = 2
+
+[node name="TabBar4" type="TabBar" parent="SmoothScrollContainer/Card_deck"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Row1" type="VBoxContainer" parent="SmoothScrollContainer/Card_deck"]
+layout_mode = 2
+
+[node name="Nya-man" type="TextureRect" parent="SmoothScrollContainer/Card_deck/Row1"]
+custom_minimum_size = Vector2(184, 326)
+layout_mode = 2
+texture = ExtResource("4_t5020")
+expand_mode = 1
+
+[node name="TabBar7" type="TabBar" parent="SmoothScrollContainer/Card_deck/Row1"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Cave-thing" type="TextureRect" parent="SmoothScrollContainer/Card_deck/Row1"]
+custom_minimum_size = Vector2(184, 326)
+layout_mode = 2
+texture = ExtResource("5_aj7xs")
+expand_mode = 1
+
+[node name="TabBar" type="TabBar" parent="SmoothScrollContainer/Card_deck"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Row2" type="VBoxContainer" parent="SmoothScrollContainer/Card_deck"]
+layout_mode = 2
+
+[node name="Kutti-gal" type="TextureRect" parent="SmoothScrollContainer/Card_deck/Row2"]
+custom_minimum_size = Vector2(184, 326)
+layout_mode = 2
+texture = ExtResource("6_wxgl5")
+expand_mode = 1
+
+[node name="TabBar2" type="TabBar" parent="SmoothScrollContainer/Card_deck"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Row3" type="VBoxContainer" parent="SmoothScrollContainer/Card_deck"]
+layout_mode = 2
+
+[node name="Nein-Nein" type="TextureRect" parent="SmoothScrollContainer/Card_deck/Row3"]
+custom_minimum_size = Vector2(184, 326)
+layout_mode = 2
+texture = ExtResource("7_all3s")
+expand_mode = 1
+
+[node name="TabBar3" type="TabBar" parent="SmoothScrollContainer/Card_deck"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Row4" type="VBoxContainer" parent="SmoothScrollContainer/Card_deck"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="SmoothScrollContainer/Card_deck/Row4"]
+custom_minimum_size = Vector2(184, 326)
+layout_mode = 2
+texture = ExtResource("4_t5020")
+expand_mode = 1
+
+[node name="TabBar5" type="TabBar" parent="SmoothScrollContainer/Card_deck"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Row5" type="VBoxContainer" parent="SmoothScrollContainer/Card_deck"]
+layout_mode = 2
+
+[node name="Ursina-dev" type="TextureRect" parent="SmoothScrollContainer/Card_deck/Row5"]
+custom_minimum_size = Vector2(184, 326)
+layout_mode = 2
+texture = ExtResource("8_fyf40")
+expand_mode = 1
+
+[node name="TabBar6" type="TabBar" parent="SmoothScrollContainer/Card_deck"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Row6" type="VBoxContainer" parent="SmoothScrollContainer/Card_deck"]
+layout_mode = 2
+
+[node name="UWU-femboy" type="TextureRect" parent="SmoothScrollContainer/Card_deck/Row6"]
+custom_minimum_size = Vector2(184, 326)
+layout_mode = 2
+texture = ExtResource("9_m46pc")
+expand_mode = 1
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0st5a")
+volume_db = 3.748
+
+[node name="Return" type="Button" parent="."]
+offset_left = 609.0
+offset_top = 605.0
+offset_right = 674.0
+offset_bottom = 697.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("11_31ghj")
+theme_override_styles/hover = ExtResource("13_42ndh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jnwel")
+theme_override_styles/normal = ExtResource("13_42ndh")
+text = "X"
+
+[node name="Transition" type="ColorRect" parent="."]
+offset_right = 1290.0
+offset_bottom = 731.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="button_up" from="Return" to="." method="_on_return_button_up"]

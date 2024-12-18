@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cth0s8to46075"]
+[gd_scene load_steps=6 format=3 uid="uid://cth0s8to46075"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_5ukj1"]
 [ext_resource type="AudioStream" uid="uid://dxu61hsf7odo8" path="res://assets/music/Menu.ogg" id="2_hvr4b"]
+[ext_resource type="StyleBox" uid="uid://cx4wdryh2tily" path="res://styles/button default.tres" id="2_ti8tm"]
+[ext_resource type="AudioStream" uid="uid://c6lcfeb1m7p4e" path="res://assets/UI/audio/potenial1.wav" id="4_cqke5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2e8i"]
-bg_color = Color(0, 0, 0, 0.435294)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et3f6"]
+bg_color = Color(0, 0.835294, 0, 1)
+border_width_left = 1
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -19,17 +24,40 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ukj1")
 
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1303.0
+offset_bottom = 748.0
+color = Color(0.940386, 0.923797, 0.843646, 1)
+
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -36.5
-offset_right = 36.5
-offset_bottom = 16.0
+offset_left = -227.0
+offset_right = 227.0
+offset_bottom = 89.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "Peepleon"
+text = "Peepleon
+"
+
+[node name="Beta Tag" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 84.0
+offset_right = 158.0
+offset_bottom = 173.0
+grow_horizontal = 2
+scale = Vector2(0.554189, 0.554189)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Beta"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -47,12 +75,28 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_k2e8i")
+theme_override_styles/hover = ExtResource("2_ti8tm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_et3f6")
+theme_override_styles/normal = ExtResource("2_ti8tm")
 text = " Start game "
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Transition" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1303.0
+offset_bottom = 748.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="bgaudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_hvr4b")
+volume_db = -7.495
 autoplay = true
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cqke5")
 
 [connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_button_button_up"]
